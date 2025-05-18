@@ -19,7 +19,7 @@ pipeline {
         stage('Git: Code Checkout') {
             steps {
                 script{
-                    code_checkout("https://github.com/ANILKUMARREDDYMURRA/wanderlust-devops-project.git","main")
+                    code_checkout("https://github.com/ANILKUMARREDDYMURRA/wanderlust_devops_project.git","main")
                 }
             }
         }
@@ -68,7 +68,7 @@ pipeline {
                         git commit -m "Updated environment variables"
                         
                         echo "Pushing changes to github: "
-                        git push https://github.com/ANILKUMARREDDYMURRA/wanderlust-devops-project.git main
+                        git push https://github.com/ANILKUMARREDDYMURRA/wanderlust_devops_project.git main
                     '''
                     }
                 }
