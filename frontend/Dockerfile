@@ -31,7 +31,7 @@ COPY --from=frontend-builder /app .
 
 #Copy the .env.docker file to .env
 
-COPY .env.docker .env
+COPY .env.docker .env.local
 
 #Expose the port on which the application will run
 EXPOSE 5173
