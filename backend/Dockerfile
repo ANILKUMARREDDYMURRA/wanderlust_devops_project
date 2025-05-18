@@ -36,6 +36,6 @@ COPY --from=backend-builder /app .
 
 COPY .env.docker .env
 
-#
+EXPOSE 8080
 
 CMD ["npm","start"]
