@@ -12,14 +12,15 @@ spec:
       app: redis
   template:
     metadata:
+      name: redis
       labels:
         app: redis
     spec:
       containers:
-        -name: redis
-        image: redis:latest
-        ports:
-          -containerPort: 6379
+       - name: redis
+         image: redis:latest
+         ports:
+           - containerPort: 6379
         volumeMounts:
           - name: mongo-data
             mountPath: /var/lib/redis/dump.rdb
@@ -35,8 +36,7 @@ kind: Service
 metadata:
   - name: redis-service
     namespace: wanderlust
-    labels:
-      app: redis
+  
 spec:
   selector:
     app: redis
