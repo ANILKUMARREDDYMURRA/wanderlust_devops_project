@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mongodb-deployment
+  name: mongo-deployment
   namespace: wanderlust
   labels:
     app: mongo
@@ -20,7 +20,7 @@ spec:
         -name: mongo
         image: mongo:latest
         ports:
-          -containerPorts: 27017
+          - containerPorts: 27017
         volumeMounts:
           - name: mongo-data
             mountPath: /data/db
@@ -35,8 +35,6 @@ kind: Service
 metadata:
   name: mongo-service
   namespace: wanderlust
-  labels:
-    app: mongo
 spec:
   selector:
     app: mongo
