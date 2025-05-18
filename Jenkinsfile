@@ -32,7 +32,7 @@ pipeline {
         stage('Git: Code Checkout') {
             steps {
                 script{
-                    code_checkout("https://github.com/LondheShubham153/Wanderlust-Mega-Project.git","main")
+                    code_checkout("https://github.com/ANILKUMARREDDYMURRA/Wanderlust_devops_Project.git","main")
                 }
             }
         }
@@ -97,11 +97,11 @@ pipeline {
             steps{
                 script{
                         dir('backend'){
-                            docker_build("wanderlust-backend-beta","${params.BACKEND_DOCKER_TAG}","anilkumarreddy")
+                            docker_build("wanderlust-backend-beta","${params.BACKEND_DOCKER_TAG}","anilkumarreddymurra")
                         }
                     
                         dir('frontend'){
-                            docker_build("wanderlust-frontend-beta","${params.FRONTEND_DOCKER_TAG}","anilkumarreddy")
+                            docker_build("wanderlust-frontend-beta","${params.FRONTEND_DOCKER_TAG}","anilkumarreddymurra")
                         }
                 }
             }
@@ -110,8 +110,8 @@ pipeline {
         stage("Docker: Push to DockerHub"){
             steps{
                 script{
-                    docker_push("wanderlust-backend-beta","${params.BACKEND_DOCKER_TAG}","anilkumarreddy") 
-                    docker_push("wanderlust-frontend-beta","${params.FRONTEND_DOCKER_TAG}","anilkumarreddy")
+                    docker_push("wanderlust-backend-beta","${params.BACKEND_DOCKER_TAG}","anilkumarreddymurra") 
+                    docker_push("wanderlust-frontend-beta","${params.FRONTEND_DOCKER_TAG}","anilkumarreddymurra")
                 }
             }
         }
